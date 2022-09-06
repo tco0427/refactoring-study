@@ -21,16 +21,14 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
 
         for (Rental rental : rentals) {
-            double thisAmount = rental.calculateCharge();
-
             frequentRenterPoints ++;
 
             if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1) {
                 frequentRenterPoints ++;
             }
 
-            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.calculateCharge()) + "\n";
+            totalAmount += rental.calculateCharge();
         }
 
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
