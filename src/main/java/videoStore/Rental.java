@@ -1,3 +1,7 @@
+package videoStore;
+
+import videoStore.movie.Movie;
+
 public class Rental {
 
     private Movie movie;

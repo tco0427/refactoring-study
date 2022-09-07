@@ -1,3 +1,5 @@
+package videoStore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class Customer {
     }
 
     public String statement() {
-        String result = "Rental Record for " + getName() + "\n";
+        String result = "videoStore.Rental Record for " + getName() + "\n";
 
         for (Rental rental : rentals) {
             result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.calculateCharge()) + "\n";
