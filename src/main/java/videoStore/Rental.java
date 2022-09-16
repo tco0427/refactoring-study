@@ -1,3 +1,7 @@
+package videoStore;
+
+import videoStore.movie.Movie;
+
 public class Rental {
 
     private Movie movie;
@@ -8,11 +12,19 @@ public class Rental {
         this.daysRented = daysRented;
     }
 
+    public double calculateCharge() {
+        return movie.getCharge(daysRented);
+    }
+
     public Movie getMovie() {
         return movie;
     }
 
     public int getDaysRented() {
         return daysRented;
+    }
+
+    public int getFrequentRenterPoints() {
+        return movie.getFrequentRenterPoints(daysRented);
     }
 }
